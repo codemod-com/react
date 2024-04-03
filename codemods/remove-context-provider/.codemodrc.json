@@ -1,0 +1,13 @@
+{
+	"version": "1.0.0",
+	"name": "react/19/remove-context-provider",
+	"private": false,
+	"engine": "jscodeshift",
+	"meta": {
+		"tags": ["react"],
+		"useCaseCategory": "migration"
+	},
+	"applicability": {
+		"from": [["react", "<=", "^18.0.0"]]
+	}
+}

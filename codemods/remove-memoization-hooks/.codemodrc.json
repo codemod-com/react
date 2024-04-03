@@ -1,0 +1,13 @@
+{
+	"version": "1.0.0",
+	"name": "react/19/remove-memoization",
+	"private": false,
+	"engine": "jscodeshift",
+	"meta": {
+		"tags": ["react"],
+		"useCaseCategory": "migration"
+	},
+	"applicability": {
+		"from": [["react", "<=", "18"]]
+	}
+}
