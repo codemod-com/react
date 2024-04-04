@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
-import jscodeshift, {API, FileInfo} from 'jscodeshift';
-import transform from '../src/index.js';
+import jscodeshift,  { type API, type FileInfo} from 'jscodeshift';
+import transform from '../src/index.ts';
 
 export const buildApi = (parser: string | undefined): API => ({
   j: parser ? jscodeshift.withParser(parser) : jscodeshift,

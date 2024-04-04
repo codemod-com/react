@@ -10,6 +10,7 @@ const semver = require('semver');
 const ossConfig = './scripts/jest/config.source.js';
 const wwwConfig = './scripts/jest/config.source-www.js';
 const devToolsConfig = './scripts/jest/config.build-devtools.js';
+const codemodConfig = './scripts/jest/config.codemod.js';
 
 // TODO: These configs are separate but should be rolled into the configs above
 // so that the CLI can provide them as options for any of the configs.
@@ -38,7 +39,7 @@ const argv = yargs
       requiresArg: true,
       type: 'string',
       default: 'default',
-      choices: ['default', 'devtools'],
+      choices: ['default', 'devtools', 'codemod'],
     },
     releaseChannel: {
       alias: 'r',
@@ -269,7 +270,9 @@ function validateOptions() {
 function getCommandArgs() {
   // Add the correct Jest config.
   const args = ['./scripts/jest/jest.js', '--config'];
-  if (argv.project === 'devtools') {
+  if (argv.project === 'codemod') { 
+    args.push(codemodConfig);
+  } else if (argv.project === 'devtools') {
     args.push(devToolsConfig);
   } else if (argv.build) {
     args.push(buildConfig);
