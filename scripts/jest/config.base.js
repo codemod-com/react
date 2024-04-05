@@ -16,7 +16,7 @@ module.exports = {
   testRegex: '/__tests__/[^/]*(\\.js|\\.coffee|[^d]\\.ts)$',
   moduleFileExtensions: ['js', 'json', 'node', 'coffee', 'ts'],
   rootDir: process.cwd(),
-  roots: ['<rootDir>/packages', '<rootDir>/scripts', '<rootDir>/codemods'],
+  roots: ['<rootDir>/packages', '<rootDir>/scripts'],
   collectCoverageFrom: ['packages/**/*.js'],
   fakeTimers: {
     enableGlobally: true,

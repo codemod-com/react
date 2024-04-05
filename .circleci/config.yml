@@ -501,6 +501,9 @@ workflows:
                 - "-r=www-modern --env=development --variant=true"
                 - "-r=www-modern --env=production --variant=true"
 
+                # Codemods
+                - "--project=codemods -r=experimental"
+
                 # TODO: Test more persistent configurations?
                 - '-r=stable --env=development --persistent'
                 - '-r=experimental --env=development --persistent'
