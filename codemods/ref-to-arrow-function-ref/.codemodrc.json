@@ -5,7 +5,8 @@
 	"name": "ref-to-arrow-function",
 	"engine": "jscodeshift",
 	"meta": {
-		"tags": ["react", "migration"]
+		"tags": ["react", "migration"],
+		"git": "https://github.com/codemod-com/react/tree/codemods-v19/codemods/"
 	},
 	"applicability": {
 		"from": [["react", "<=", "18"]]
