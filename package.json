@@ -1,7 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "codemods/*"
   ],
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -35,11 +36,14 @@
     "@babel/plugin-transform-template-literals": "^7.10.5",
     "@babel/preset-flow": "^7.10.4",
     "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.24.1",
     "@babel/traverse": "^7.11.0",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.3",
     "abortcontroller-polyfill": "^1.7.5",
     "art": "0.10.1",
     "babel-plugin-syntax-trailing-function-commas": "^6.5.0",
