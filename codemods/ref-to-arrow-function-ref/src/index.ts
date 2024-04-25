@@ -20,24 +20,17 @@ export default function transform(
 
 	// Find JSX elements with ref attribute
 	root
-		.find(j.JSXElement, {
-			openingElement: {
-				attributes: [
-					{
-						type: "JSXAttribute",
-						name: {
-							type: "JSXIdentifier",
-							name: "ref",
-						},
-					},
-				],
-			},
-		})
+		// Find JSX elements with a ref attribute
+		.find(j.JSXElement)
 		.forEach((path) => {
 			// Get the ref name
 			const refName = path.node.openingElement.attributes.find(
-				(attr) => attr.name.name === "ref",
-			).value.value;
+				(attr) => attr?.name?.name === "ref",
+			)?.value?.value;
+			
+			if (typeof refName !== "string") {
+				return;
+			}
 
 			// Create new ref attribute
 			const newRefAttr = j.jsxAttribute(
@@ -66,7 +59,7 @@ export default function transform(
 
 			// Replace old ref attribute with new one
 			const newAttributes = path.node.openingElement.attributes.map((attr) =>
-				attr.name.name === "ref" ? newRefAttr : attr,
+				attr?.name?.name === "ref" ? newRefAttr : attr,
 			);
 			const newOpeningElement = j.jsxOpeningElement(
 				path.node.openingElement.name,
